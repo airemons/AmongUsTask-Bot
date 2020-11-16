@@ -3,6 +3,7 @@
  
  Run these commands in cmd for it to work.
  pip install pyautogui
+ 
  pip install pillow
  
  and thats it. enjoy!
