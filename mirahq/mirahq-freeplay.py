@@ -1,5 +1,6 @@
 import pyautogui
 import os
+import numpy
 from time import sleep
 
 def getAllTasks():
@@ -8,12 +9,99 @@ def getAllTasks():
     pyautogui.keyUp('d')
     pyautogui.press('space')
     sleep(0.2)
+    homeButton = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Home Button.png')  
+    backButton = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Back Button.png')
     adminFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Admin.png')
-    pyautogui.click(adminFolder)
-    pyautogui.click
+    balconyFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Balcony.png')
+    cafeteriaFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Cafeteria.png')
+    communicationsFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Communications.png')
+    greenhouseFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Greenhouse.png')
     
+    pyautogui.click(adminFolder)
+    adminPrimeShields = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Admin Prime Shields.png')
+    adminChartCourse = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Admin Chart Course.png')
+    adminDivertPower = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Admin Divert Power.png')
+    adminEnterIDCode = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Admin Enter ID Code.png')
+    pyautogui.click(backButton)
+
+    pyautogui.click(balconyFolder)
+    balconyClearAsteroids = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Balcony Clear Asteroids.png')
+    balconyMeasureWeather = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Balcony Measure Weather.png')
+    pyautogui.click(backButton)
+
+    pyautogui.click(cafeteriaFolder)
+    cafeteriaEmptyGarbage = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Cafeteria Empty Garbage.png')
+    cafeteriaDivertPower = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Cafeteria Divert Power.png')
+    cafeteriaBuyBeverage = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Cafeteria Buy Beverage.png')
+    pyautogui.click(backButton)
+
+    pyautogui.click(communicationsFolder)
+    communicationsDivertPower = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Communications Divert Power.png')
+    pyautogui.click(backButton)
+
+    pyautogui.click(greenhouseFolder)
+    greenhouseDivertPower = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Greenhouse Divert Power.png')
+    greenhouseCleanO2Filter = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Greenhouse Clean O2 Filter.png')
+    pyautogui.click(backButton)
+    
+    def adminTasks():
+        pyautogui.click(adminFolder)
+        pyautogui.moveTo(homeButton)
+        sleep(0.05)
+        pyautogui.click(adminPrimeShields)
+        pyautogui.moveTo(homeButton)
+        pyautogui.click(adminChartCourse)
+        pyautogui.moveTo(homeButton)
+        pyautogui.click(adminDivertPower)
+        pyautogui.moveTo(homeButton)
+        pyautogui.click(adminEnterIDCode)
+        pyautogui.click(backButton)
+ 
+    def balconyTasks():
+        pyautogui.click(balconyFolder)
+        pyautogui.moveTo(homeButton)
+        sleep(0.01)
+        pyautogui.click(balconyClearAsteroids)
+        pyautogui.moveTo(homeButton)
+        pyautogui.click(balconyMeasureWeather)
+        pyautogui.click(backButton)
+
+    def cafeteriaTasks():
+        pyautogui.click(cafeteriaFolder)
+        pyautogui.moveTo(homeButton)
+        sleep(0.01)
+        pyautogui.click(cafeteriaEmptyGarbage)
+        pyautogui.moveTo(homeButton)
+        pyautogui.click(cafeteriaDivertPower)
+        pyautogui.moveTo(homeButton)
+        pyautogui.click(cafeteriaBuyBeverage)
+        pyautogui.click(backButton)
+
+    def communicationsTasks():
+        pyautogui.click(communicationsFolder)
+        pyautogui.moveTo(homeButton)
+        sleep(0.01)
+        pyautogui.click(communicationsDivertPower)
+        pyautogui.click(backButton)
+
+    def greenhouseTasks():
+        pyautogui.click(greenhouseFolder)
+        pyautogui.moveTo(homeButton)
+        sleep(0.01)
+        pyautogui.click(greenhouseDivertPower)
+        pyautogui.moveTo(homeButton)
+        pyautogui.click(greenhouseCleanO2Filter)
+
+    adminTasks()
+    balconyTasks()
+    cafeteriaTasks()
+    communicationsTasks()
+    greenhouseTasks()
+    pyautogui.press('esc')
+getAllTasks()
+
 pyautogui.keyDown('w')
-sleep(0.8)
+sleep(0.9)
 pyautogui.keyUp('w')
 pyautogui.press('space')
 sleep(0.3)
@@ -25,13 +113,13 @@ def cafeteriaEmptyGarbage():
     pyautogui.mouseDown(button='left')
     end = pyautogui.locateCenterOnScreen('reference-pictures/Cafeteria Empty Garbage End.png')
     pyautogui.moveTo(end)
-    sleep(1.4)
+    sleep(1.45)
     pyautogui.mouseUp(button='left')
 
 cafeteriaEmptyGarbage()
 sleep(1)
 pyautogui.keyDown('d')
-sleep(0.8)
+sleep(0.7)
 pyautogui.keyUp('d')
 pyautogui.press('space')
 sleep(0.2)
@@ -120,7 +208,7 @@ pyautogui.keyDown('d')
 sleep(0.2)
 pyautogui.keyUp('d')
 pyautogui.keyDown('w')
-sleep(0.4)
+sleep(0.5)
 pyautogui.keyUp('w')
 pyautogui.keyDown('a')
 sleep(0.3)
@@ -230,7 +318,7 @@ pyautogui.keyUp('a')
 def asteroids():
     sleep(0.2)
     pyautogui.press('space')
-    while pyautogui.locateOnScreen('reference-pictures/Asteroids.png') is None:
-        pyautogui.click(clicks=20, interval=0.25)
+    sleep(0.2)
+    pyautogui.press('esc')
         
 asteroids()
