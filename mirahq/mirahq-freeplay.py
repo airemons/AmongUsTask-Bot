@@ -16,6 +16,7 @@ def getAllTasks():
     cafeteriaFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Cafeteria.png')
     communicationsFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Communications.png')
     greenhouseFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Greenhouse.png')
+    hallwayFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Hallway.png')
     
     pyautogui.click(adminFolder)
     adminPrimeShields = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Admin Prime Shields.png')
@@ -43,6 +44,10 @@ def getAllTasks():
     greenhouseDivertPower = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Greenhouse Divert Power.png')
     greenhouseCleanO2Filter = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Greenhouse Clean O2 Filter.png')
     pyautogui.click(backButton)
+
+    pyautogui.click(hallwayFolder)
+    hallwayFixWiring = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Hallway Fix Wiring.png')
+    pyautogui.click(backButton)
     
     def adminTasks():
         pyautogui.click(adminFolder)
@@ -52,8 +57,10 @@ def getAllTasks():
         pyautogui.moveTo(homeButton)
         pyautogui.click(adminChartCourse)
         pyautogui.moveTo(homeButton)
+        sleep(0.05)
         pyautogui.click(adminDivertPower)
         pyautogui.moveTo(homeButton)
+        sleep(0.05)
         pyautogui.click(adminEnterIDCode)
         pyautogui.click(backButton)
  
@@ -91,12 +98,21 @@ def getAllTasks():
         pyautogui.click(greenhouseDivertPower)
         pyautogui.moveTo(homeButton)
         pyautogui.click(greenhouseCleanO2Filter)
+        pyautogui.click(backButton)
+
+    def hallwayTasks():
+        pyautogui.click(hallwayFolder)
+        pyautogui.moveTo(homeButton)
+        sleep(0.01)
+        pyautogui.click(hallwayFixWiring)
+        pyautogui.click(backButton)
 
     adminTasks()
     balconyTasks()
     cafeteriaTasks()
     communicationsTasks()
     greenhouseTasks()
+    hallwayTasks()
     pyautogui.press('esc')
 getAllTasks()
 
