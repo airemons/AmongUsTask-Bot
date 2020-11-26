@@ -18,6 +18,8 @@ def getAllTasks():
     communicationsFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Communications.png')
     greenhouseFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Greenhouse.png')
     hallwayFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Hallway.png')
+    laboratoryFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Laboratory.png')
+    launchpadFolder = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Launchpad.png')
     
     pyautogui.click(adminFolder)
     pyautogui.moveTo(homeButton)
@@ -55,6 +57,20 @@ def getAllTasks():
     pyautogui.click(hallwayFolder)
     pyautogui.moveTo(homeButton)
     hallwayFixWiring = pyautogui.locateOnScreen('reference-pictures/Task Tester 2000 Hallway Fix Wiring.png')
+    pyautogui.click(backButton)
+
+    pyautogui.click(laboratoryFolder)
+    pyautogui.moveTo(homeButton)
+    laboratoryDivertPower = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Laboratory Divert Power.png')
+    laboratoryAssembleArtifact = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Laboratory Assemble Artifact.png')
+    laboratorySortSamples = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Laboratory Sort Samples.png')
+    pyautogui.click(backButton)
+
+    pyautogui.click(launchpadFolder)
+    pyautogui.moveTo(homeButton)
+    launchpadFuelEngines = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Launchpad Fuel Engines.png')
+    launchpadDivertPower = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Launchpad Divert Power.png')
+    launchpadRunDiagonostics = pyautogui.locateCenterOnScreen('reference-pictures/Task Tester 2000 Launchpad Run Diagnostics.png')
     pyautogui.click(backButton)
     
     def adminTasks():
@@ -115,12 +131,40 @@ def getAllTasks():
         pyautogui.click(hallwayFixWiring)
         pyautogui.click(backButton)
 
+    def laboratoryTasks():
+        pyautogui.click(laboratoryFolder)
+        pyautogui.moveTo(homeButton)
+        sleep(0.05)
+        pyautogui.click(laboratoryDivertPower)
+        pyautogui.moveTo(homeButton)
+        sleep(0.05)
+        pyautogui.click(laboratoryAssembleArtifact)
+        pyautogui.moveTo(homeButton)
+        sleep(0.05)
+        pyautogui.click(laboratorySortSamples)
+        pyautogui.click(backButton)
+
+    def launchpadTasks():
+        pyautogui.click(launchpadFolder)
+        pyautogui.moveTo(homeButton)
+        sleep(0.05)
+        pyautogui.click(launchpadFuelEngines)
+        pyautogui.moveTo(homeButton)
+        sleep(0.05)
+        pyautogui.click(launchpadDivertPower)
+        pyautogui.moveTo(homeButton)
+        sleep(0.05)
+        pyautogui.click(launchpadRunDiagonostics)
+        pyautogui.click(backButton)
+
     adminTasks()
     balconyTasks()
     cafeteriaTasks()
     communicationsTasks()
     greenhouseTasks()
     hallwayTasks()
+    laboratoryTasks()
+    launchpadTasks()
     pyautogui.press('esc')
 getAllTasks()
 
